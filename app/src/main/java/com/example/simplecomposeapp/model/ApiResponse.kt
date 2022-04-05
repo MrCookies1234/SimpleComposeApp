@@ -1,11 +1,10 @@
 package com.example.simplecomposeapp.model
 
-class ApiResponse {
-    val results: List<Results> = emptyList()
-}
+data class ApiResponse(val results: List<Results>)
+
 
 data class Results(
-    val userLocation: UserLocation?,
-    val userName: UserName?,
-    val picture: UserPicture?
+    val name: UserName?,
+    val location: UserLocation?,
+    val picture: UserPicture?,
 )

@@ -1,5 +1,6 @@
 package com.example.simplecomposeapp.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.simplecomposeapp.repository.UserRepository
@@ -14,6 +15,7 @@ class UserViewModel @Inject constructor(private val userRepositoryImp: UserRepos
     fun getUser(){
         viewModelScope.launch(Dispatchers.IO){
             val user = userRepositoryImp.getUser()
+            Log.d("USER: ", user.toString())
 
         }
     }

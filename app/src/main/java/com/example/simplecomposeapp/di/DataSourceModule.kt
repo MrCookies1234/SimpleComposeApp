@@ -17,7 +17,7 @@ class DataSourceModule {
     @Singleton
     @Provides
     @Named("baseURL")
-    fun provideBaseUrl() = "https://randomuser.me/api"
+    fun provideBaseUrl() = "https://randomuser.me/api/"
 
     @Singleton
     @Provides
@@ -28,5 +28,7 @@ class DataSourceModule {
             .build()
     }
 
+    @Singleton
+    @Provides
     fun restDataSource(retrofit: Retrofit): RestDataSource = retrofit.create(RestDataSource::class.java)
 }
